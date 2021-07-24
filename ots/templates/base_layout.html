@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="Wrapper">
+        <h1><a href="{% url 'articles:list' %}"><img src="/static/homelogo.png"/></a> </h1>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
