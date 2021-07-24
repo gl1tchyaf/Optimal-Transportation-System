@@ -6,5 +6,15 @@
 </head>
 <body>
   <h1>Homepage</h1>
+    <div class="articles">
+        {% for article in articles %}
+        <div class="article">
+            <h2><a href="#">{{ article.title }}</a></h2>
+            <p>{{ article.snippet }}</p>
+            <p>{{ article.date }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
 </body>
 </html>
