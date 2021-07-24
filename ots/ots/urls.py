@@ -3,6 +3,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
 
@@ -12,3 +13,5 @@ urlpatterns = [
     url(r'^$', views.homepage),
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
