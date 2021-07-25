@@ -2,7 +2,7 @@ body{
     background-color: #0f121f;
     background-image: url(bg.jpg);
     background-repeat-y: no-repeat;
-    color: #fff;
+    color: #000000;
 }
 
 body *{
@@ -17,4 +17,24 @@ h1,h2,h3,h4,h5{
 a,a:hover, a:visited{
     color: #fff;
     text-decoration: none;
+}
+.site-form_signup{
+margin-right: 75%;
+}
+.site-form_login{
+margin-left: 45.5%;
+margin-right: 50%;
+text-align: center;
+}
+div.form_login
+{
+    display: block;
+    text-align: center;
+}
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
