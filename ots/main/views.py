@@ -7,15 +7,15 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url="/accounts/login/")
 def homepage(request):
-    articles = Article.objects.all().order_by('date')
-    return render(request, 'main/homepage.html', {'articles': articles})
+    buses = Article.objects.all().order_by('date')
+    return render(request, 'main/homepage.html', {'articles': buses})
 
 
 @login_required(login_url="/accounts/login/")
-def articles_details(request, slug):
+def bus_details(request, slug):
     # return HttpResponse(slug)
-    article = Article.objects.get(slug=slug)
-    return render(request, 'main/article_details.html', {'article': article})
+    buses = Article.objects.get(slug=slug)
+    return render(request, 'main/bus_details.html', {'article': buses})
 
 
 

@@ -6,5 +6,5 @@ app_name = 'articles'
 
 urlpatterns = [
     url(r'^$', views.homepage, name="list"),
-    url(r'^(?P<slug>[\w-]+)/$', views.articles_details, name="detail"),
+    url(r'^(?P<slug>[\w-]+)/$', views.bus_details, name="detail"),
 ]
