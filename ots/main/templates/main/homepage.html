@@ -1,9 +1,12 @@
+<marquee>Welcome to our web app, Optimal Transportation System.</marquee>
 {% extends 'base_layout.html' %}
 
 
 {% block content %}
+
   <h1>Homepage</h1>
     <div class="articles">
+
         {% for article in articles %}
         <div class="article">
             <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
