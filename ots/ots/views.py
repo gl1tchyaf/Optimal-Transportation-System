@@ -1,9 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 
 def homepage(request):
-    # return HttpResponse("Homepage")
-    return render(request, 'homepage.html')
+    return redirect('articles:list')
 
 
 def about(request):
