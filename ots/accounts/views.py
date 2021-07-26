@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from django.contrib import messages
 # Create your views here.
 
 
@@ -28,7 +29,7 @@ def login_view(request):
             else:
                 return redirect('articles:list')
         else:
-            return HttpResponse("fuck")
+            messages.info(request,'Username or Password is incorrect')
 
     else:
         form = AuthenticationForm()
