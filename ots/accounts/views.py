@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
@@ -26,6 +27,8 @@ def login_view(request):
                 return redirect(request.POST.get("next"))
             else:
                 return redirect('articles:list')
+        else:
+            return HttpResponse("fuck")
 
     else:
         form = AuthenticationForm()
