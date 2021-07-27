@@ -18,6 +18,12 @@ def bus_details(request, slug):
     return render(request, 'main/bus_details.html', {'article': buses})
 
 
+@login_required(login_url="/accounts/login/")
+def about(request):
+    # return HttpResponse("About")
+    return render(request, 'main/about.html')
+
+
 
 
 

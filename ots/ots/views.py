@@ -3,11 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url="/accounts/login/")
 def homepage(request):
     return redirect('articles:list')
 
 
-@login_required(login_url="/accounts/login/")
-def about(request):
-    # return HttpResponse("About")
-    return render(request, 'about.html')
+
