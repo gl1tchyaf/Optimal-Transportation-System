@@ -10,6 +10,7 @@
         <a class="active" href="/main">Home</a>
 
         <a href="{% url 'articles:about' %}">About</a>
+        <a href="{% url 'articles:contact' %}">Contact Us</a>
         <nav>
             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                 {% csrf_token %}

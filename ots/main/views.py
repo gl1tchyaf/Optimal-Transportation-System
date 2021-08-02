@@ -24,6 +24,9 @@ def about(request):
     return render(request, 'main/about.html')
 
 
+@login_required(login_url="/account/login/")
+def contact(request):
+    return render(request, 'main/contact.html')
 
 
 
