@@ -2,7 +2,6 @@
 
 @font-face {
   font-family: Ubuntu-Bold;
-  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
 }
 
 
@@ -13,9 +12,7 @@
 }
 
 body, html {
-	height: 100%;
-	font-family: Ubuntu-Bold, sans-serif;
-  background-image: linear-gradient(45deg, #00dbde, #fc00ff);
+    background-image:url("bg-004.jpg") ;
 }
 
 
@@ -41,15 +38,7 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-input::-webkit-input-placeholder { color: #bdbdd3;}
-input:-moz-placeholder { color: #bdbdd3;}
-input::-moz-placeholder { color: #bdbdd3;}
-input:-ms-input-placeholder { color: #bdbdd3;}
 
-textarea::-webkit-input-placeholder { color: #bdbdd3;}
-textarea:-moz-placeholder { color: #bdbdd3;}
-textarea::-moz-placeholder { color: #bdbdd3;}
-textarea:-ms-input-placeholder { color: #bdbdd3;}
 
 /*---------------------------------------------*/
 button {
@@ -62,9 +51,7 @@ button:hover {
 	cursor: pointer;
 }
 
-iframe {
-	border: none !important;
-}
+
 
 
 /*---------------------------------------------*/
@@ -91,7 +78,6 @@ iframe {
   align-items: center;
   padding: 15px;
   position: relative;
-  background-image: linear-gradient(45deg, #00dbde, #fc00ff);
 }
 
 .wrap-contact100 {
@@ -203,7 +189,6 @@ textarea.input100 {
   padding: 0 20px;
   min-width: 150px;
   height: 50px;
-  background-color: transparent;
   border-radius: 31px;
 
   font-family: Ubuntu-Bold;
@@ -229,7 +214,6 @@ textarea.input100 {
 
   transform: translateX(-50%);
   border-radius: 31px;
-  background-color: #a51a87;
   pointer-events: none;
 
   
@@ -238,7 +222,6 @@ textarea.input100 {
 }
 
 .contact100-form-btn:hover:before {
-  background-color: #05646d;
   width: calc(100% + 20px);
 }
 
@@ -264,8 +247,8 @@ textarea.input100 {
   justify-content: right;
   align-items: right;
   text-align: center;
-  color:#ebebebb7;;
-  background-image: linear-gradient(-45deg, #00dbde, #fc00ff);
+  color:#ebebebb7;
+background-image:url("bg-004.jpg") ;
 
 }
 
