@@ -98,7 +98,7 @@ button:hover {
   display: block;
   font-family: Ubuntu-Bold;
   font-size: 30px;
-  color: #ebebebb7;
+  color: #ffffff;
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
@@ -189,11 +189,12 @@ textarea.input100 {
   padding: 0 20px;
   min-width: 150px;
   height: 50px;
+  background-color: transparent;
   border-radius: 31px;
 
   font-family: Ubuntu-Bold;
   font-size: 16px;
-  color: #fff;
+  color: #FFFFFF;
   line-height: 1.2;
   text-transform: uppercase;
 
@@ -214,14 +215,16 @@ textarea.input100 {
 
   transform: translateX(-50%);
   border-radius: 31px;
+  background-color: #FFFFFF;
   pointer-events: none;
 
-  
-  
+
+
   transition: all 0.4s;
 }
 
 .contact100-form-btn:hover:before {
+  background-color: #FFFFFF;
   width: calc(100% + 20px);
 }
 
