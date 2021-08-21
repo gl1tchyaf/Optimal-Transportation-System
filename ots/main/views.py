@@ -29,4 +29,8 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 
+@login_required(login_url="/account/login/")
+def bolaka(request):
+    return render(request, 'main/bolaka.html')
+
 

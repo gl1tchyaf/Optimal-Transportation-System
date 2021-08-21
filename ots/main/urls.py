@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^$', views.homepage, name="list"),
     url(r'^about/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name="contact"),
+    url(r'^bolaka/$', views.bolaka, name="bolaka"),
     url(r'^(?P<slug>[\w-]+)/$', views.bus_details, name="detail"),
 ]
