@@ -67,16 +67,5 @@
 
     </div>
 
-    <div class="articles">
-        <h1>Buses: </h1>
-        <br >
-        {% for article in articles %}
-        <div class="article">
-            <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
-            <p>{{ article.snippet }}</p>
-        </div>
-        <br >
-        {% endfor %}
-
-    </div>
+    
 {% endblock %}
