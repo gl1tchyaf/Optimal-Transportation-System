@@ -55,18 +55,26 @@ def ticket_page(request):
 
 
 @login_required(login_url="/account/login/")
+def ticket_page(request):
+    message_name = request.POST.get('message-name')
+    message_email = request.POST.get('message-email')
+    message_phone = request.POST.get('message-phone')
+
+    print(message_name, message_email, message_phone)
+
+    return render(request, 'main/ticket_page.html')
+
+
+@login_required(login_url="/account/login/")
 def ticket(request):
     buf = io.BytesIO()
-    c= canvas.Canvas(buf, pagesize=letter, bottomup=0)
+    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
     textob = c.beginText()
     textob.setTextOrigin(inch, inch)
     textob.setFont("Helvetica", 14)
 
-    if request.method == "POST":
-        input_text = request.POST('username')
-
-    print(input_text)
-    lines= [
+    print()
+    lines = [
         "Line1",
         "Line2",
         "Line3",
@@ -83,5 +91,3 @@ def ticket(request):
     buf.seek(0)
 
     return FileResponse(buf, as_attachment=True, filename="ticket.pdf")
-
-

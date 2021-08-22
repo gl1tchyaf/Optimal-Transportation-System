@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form name="myform" action="." method="POST">
-        {% csrf_token %}
-            <div class="form-group">
-                <center><label>Input Text</label>
-                <input type="text" name="username" class="form-group" placeholder="Text input">
-                </center>
-              </div>
-            <br><br>
-            <center><button type="submit" class="btn btn-default"> <a href="{% url 'articles:ticket' %}">Book Ticket</a></button>
-            </center>
-        </form>
-</body>
-</html>
+
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+<br>
+    <form action="" method="POST" class="contact100-form validate-form">
+				{% csrf_token %}
+					<input class="input100" type="text" name="message-name" placeholder="Full Name">
+
+					<input class="input100" type="text" name="message-email" placeholder="E-mail">
+
+					<input class="input100" type="text" name="message-phone" placeholder="Phone">
+
+
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Submit
+						</span>
+					</button>
+				</div>
+			</form>
+
+{% endblock %}
