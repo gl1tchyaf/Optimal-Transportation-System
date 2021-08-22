@@ -67,10 +67,11 @@ def ticket_page(request):
     ticket_page.message_name = request.POST.get('message-name')
     ticket_page.message_email = request.POST.get('message-email')
     ticket_page.message_phone = request.POST.get('message-phone')
+    ticket_page.message_start = request.POST.get('message-start')
+    ticket_page.message_end = request.POST.get('message-end')
+    ticket_page.message_date = request.POST.get('message-date')
 
-    print(ticket_page.message_name, ticket_page.message_email, ticket_page.message_phone)
-
-    return render(request, 'main/ticket_page.html')
+    return render(request, 'main/ticket_page.html', {'message_name': ticket_page.message_name})
 
 
 @login_required(login_url="/account/login/")
@@ -83,14 +84,17 @@ def ticket(request):
     name=ticket_page.message_name
     mail=ticket_page.message_email
     phone=ticket_page.message_phone
+    start= ticket_page.message_start
+    end = ticket_page.message_end
 
-    print(name, mail, phone)
     lines = [
         name,
         mail,
         phone,
-        "Line4",
-        "Line5",
+        start,
+        end,
+        ticket_page.message_date
+
     ]
 
     for line in lines:

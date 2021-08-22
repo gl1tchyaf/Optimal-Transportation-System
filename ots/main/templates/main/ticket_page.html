@@ -12,6 +12,64 @@
 
 					<input class="input100" type="text" name="message-phone" placeholder="Phone">
 
+					<select class="dropdown" name="message-start">
+  						<option value="Khilgaon">Khilgaon</option>
+ 						 <option value="Gabtoli">Gabtoli</option>
+ 						 <option value="Technical">Technical</option>
+						 <option value="Ansar Camp">Ansar Camp</option>
+  						<option value="Mirpur-1">Mirpur-1</option>
+ 						 <option value="Sony Cinema Hall">Sony Cinema Hall</option>
+  						<option value="Mirpur-2">Mirpur-2</option>
+  						<option value="Mirpur-10">Mirpur-10</option>
+ 						 <option value="Mirpur-11">Mirpur-11</option>
+ 						 <option value="Purobi">Purobi</option>
+  						<option value="Kalshi">Kalshi</option>
+  						<option value="ECB Square">ECB Square</option>
+  						<option value="MES">MES</option>
+  						<option value="Sheura">Sheura</option>
+  						<option value="Kuril">Kuril</option>
+  						<option value="Boshundhara">Boshundhara</option>
+ 						 <option value="Norda">Norda</option>
+  						<option value="Notun Bazar">Notun Bazar</option>
+  						<option value="Badda">Badda</option>
+  						<option value="Rampura Bridge">Rampura Bridge</option>
+  						<option value="Banasree">Banasree</option>
+  						<option value="Demra">Demra</option>
+  						<option value="Uttara">Uttara</option>
+  						<option value="Airport">Airport</option>
+    				</select>
+
+				<select class="dropdown" name="message-end">
+  						<option value="Khilgaon">Khilgaon</option>
+ 						 <option value="Gabtoli">Gabtoli</option>
+ 						 <option value="Technical">Technical</option>
+						 <option value="Ansar Camp">Ansar Camp</option>
+  						<option value="Mirpur-1">Mirpur-1</option>
+ 						 <option value="Sony Cinema Hall">Sony Cinema Hall</option>
+  						<option value="Mirpur-2">Mirpur-2</option>
+  						<option value="Mirpur-10">Mirpur-10</option>
+ 						 <option value="Mirpur-11">Mirpur-11</option>
+ 						 <option value="Purobi">Purobi</option>
+  						<option value="Kalshi">Kalshi</option>
+  						<option value="ECB Square">ECB Square</option>
+  						<option value="MES">MES</option>
+  						<option value="Sheura">Sheura</option>
+  						<option value="Kuril">Kuril</option>
+  						<option value="Boshundhara">Boshundhara</option>
+ 						 <option value="Norda">Norda</option>
+  						<option value="Notun Bazar">Notun Bazar</option>
+  						<option value="Badda">Badda</option>
+  						<option value="Rampura Bridge">Rampura Bridge</option>
+  						<option value="Banasree">Banasree</option>
+  						<option value="Demra">Demra</option>
+  						<option value="Uttara">Uttara</option>
+  						<option value="Airport">Airport</option>
+    				</select>
+
+			<input type="date" name="message-date">
+
+
+
 
 
 				<div class="container-contact100-form-btn">
@@ -19,8 +77,13 @@
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Submit
+							<br>
 						</span>
 					</button>
+					<br>
+					{% if message_name %}
+					<button class="contact100-form-btn"><a href="{% url 'articles:ticket' %}">Buy Ticket</a></button>
+					{% endif %}
 				</div>
 			</form>
 
