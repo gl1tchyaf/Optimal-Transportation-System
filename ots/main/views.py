@@ -64,11 +64,11 @@ def ticket_page(request):
 
 @login_required(login_url="/account/login/")
 def ticket_page(request):
-    message_name = request.POST.get('message-name')
-    message_email = request.POST.get('message-email')
-    message_phone = request.POST.get('message-phone')
+    ticket_page.message_name = request.POST.get('message-name')
+    ticket_page.message_email = request.POST.get('message-email')
+    ticket_page.message_phone = request.POST.get('message-phone')
 
-    print(message_name, message_email, message_phone)
+    print(ticket_page.message_name, ticket_page.message_email, ticket_page.message_phone)
 
     return render(request, 'main/ticket_page.html')
 
@@ -80,12 +80,15 @@ def ticket(request):
     textob = c.beginText()
     textob.setTextOrigin(inch, inch)
     textob.setFont("Helvetica", 14)
+    name=ticket_page.message_name
+    mail=ticket_page.message_email
+    phone=ticket_page.message_phone
 
-    print()
+    print(name, mail, phone)
     lines = [
-        "Line1",
-        "Line2",
-        "Line3",
+        name,
+        mail,
+        phone,
         "Line4",
         "Line5",
     ]
