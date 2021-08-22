@@ -46,9 +46,16 @@
 						</span>
 					</button>
 				</div>
+				<br />
+				{% if message_name %}
 				<div>
-					<h2>Thanks, {{ message_name }} for getting in touch with us. </h2>
+					<h2 align="center">Thanks, {{ message_name }} for getting in touch with us. </h2>
 				</div>
+				{% else %}
+				<div>
+					<h2 align="center">Thank you for visiting our website.</h2>
+				</div>
+				{% endif %}
 			</form>
 		</div>
 	</div>
@@ -73,7 +80,7 @@
 				</div>
 
 			</div>
-		
+
 
 
 

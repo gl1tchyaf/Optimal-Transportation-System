@@ -9,6 +9,7 @@ import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -38,8 +39,15 @@ def contact(request):
         message_email = request.POST['message-email']
         message_phone = request.POST['message-phone']
         message = request.POST['message-message']
-        return render(request, 'main/contact.html', {'message_name': message_name})
 
+        #send email
+        send_mail(
+            message_name +' '+ message_phone, # subject
+            'Sent from '+message_email+ ' \n' + message, #message
+            message_email, #from mail
+            ['2018-3-60-088@std.ewubd.edu'], #tomail
+        )
+        return render(request, 'main/contact.html', {'message_name': message_name})
     else:
         return render(request, 'main/contact.html')
 
