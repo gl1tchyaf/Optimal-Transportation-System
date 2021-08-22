@@ -12,6 +12,7 @@
 
         <a href="{% url 'articles:about' %}">About</a>
         <a href="{% url 'articles:contact' %}">Contact Us</a>
+        <a href="{% url 'articles:ticket_page' %}">Ticket Page</a>
         <nav>
             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                 {% csrf_token %}
