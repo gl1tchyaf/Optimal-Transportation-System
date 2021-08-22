@@ -6,12 +6,14 @@
 <br>
     <form action="" method="POST" class="contact100-form validate-form">
 				{% csrf_token %}
-					<input class="input100" type="text" name="message-name" placeholder="Full Name">
 
-					<input class="input100" type="text" name="message-email" placeholder="E-mail">
+		<h1> Enter your information:  </h1> <br>
+					<input class="input100" type="text" name="message-name" placeholder="Full Name"> <br> <br>
 
-					<input class="input100" type="text" name="message-phone" placeholder="Phone">
+					<input class="input100" type="text" name="message-email" placeholder="E-mail"> <br> <br>
 
+					<input class="input100" type="text" name="message-phone" placeholder="Phone"> <br> <br>
+					<h4> Pickup place: </h4>
 					<select class="dropdown" name="message-start">
   						<option value="Khilgaon">Khilgaon</option>
  						 <option value="Gabtoli">Gabtoli</option>
@@ -37,8 +39,8 @@
   						<option value="Demra">Demra</option>
   						<option value="Uttara">Uttara</option>
   						<option value="Airport">Airport</option>
-    				</select>
-
+    				</select> <br><br>
+					<h4> Drop off place: </h4>
 				<select class="dropdown" name="message-end">
   						<option value="Khilgaon">Khilgaon</option>
  						 <option value="Gabtoli">Gabtoli</option>
@@ -64,9 +66,21 @@
   						<option value="Demra">Demra</option>
   						<option value="Uttara">Uttara</option>
   						<option value="Airport">Airport</option>
-    				</select>
-
-			<input type="date" name="message-date">
+    				</select> <br> <br>
+				<h4> Date: </h4>
+			<input type="date" name="message-date"> <br> <br>
+				<h4> Bus: </h4>
+			<select class="dropdown" name="message-bus">
+  						<option value="Akash">Akash</option>
+ 						 <option value="Alif">Alif</option>
+ 						 <option value="Raida">Raida</option>
+						 <option value="VIP">VIP</option>
+  						<option value="BRTC">BRTC</option>
+ 						 <option value="Green Dhaka">Green Dhaka</option>
+  						<option value="Anabil">Anabil</option>
+  						<option value="Skyline">Skyline</option>
+ 						 <option value="Supravat">Supravat</option>
+    				</select> <br> <br>
 
 
 
@@ -76,11 +90,11 @@
 					<button class="contact100-form-btn">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
-							Submit
+							<a>Submit</a>
 							<br>
 						</span>
 					</button>
-					<br>
+					<br> <br>
 					{% if message_name %}
 					<button class="contact100-form-btn"><a href="{% url 'articles:ticket' %}">Buy Ticket</a></button>
 					{% endif %}
