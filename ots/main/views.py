@@ -26,7 +26,15 @@ def about(request):
 
 @login_required(login_url="/account/login/")
 def contact(request):
-    return render(request, 'main/contact.html')
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message_phone = request.POST['message-phone']
+        message = request.POST['message-message']
+        return render(request, 'main/contact.html', {'message_name': message_name})
+
+    else:
+        return render(request, 'main/contact.html')
 
 
 @login_required(login_url="/account/login/")
