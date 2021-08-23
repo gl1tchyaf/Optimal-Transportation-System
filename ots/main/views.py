@@ -68,6 +68,7 @@ def ticket_page(request):
     ticket_page.message_start = request.POST.get('message-start')
     ticket_page.message_end = request.POST.get('message-end')
     ticket_page.message_date = request.POST.get('message-date')
+    ticket_page.message_bus = request.POST.get('message-bus')
 
     return render(request, 'main/ticket_page.html', {'message_name': ticket_page.message_name})
 
@@ -84,14 +85,29 @@ def ticket(request):
     phone=ticket_page.message_phone
     start= ticket_page.message_start
     end = ticket_page.message_end
+    date = ticket_page.message_date
+    bus = ticket_page.message_bus
 
     lines = [
-        name,
-        mail,
-        phone,
-        start,
-        end,
-        ticket_page.message_date
+        "Welcome to optimal transportation system",
+        " ",
+        "Your ticket is below",
+        " ",
+        "Full name: " + name,
+        " ",
+        "Email: " + mail,
+        " ",
+        "Phone: "+phone,
+        " ",
+        "Pickup place: "+start,
+        " ",
+        "Destination: "+end,
+        " ",
+        "Journey Date: "+date,
+        " ",
+        "Bus: "+bus,
+        " ",
+        "All right reserved by optimal transportation system",
 
     ]
 
