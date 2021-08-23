@@ -13,7 +13,7 @@ from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 from django.core.mail import send_mail
 
-from .forms import RateForm
+from .models import balaka
 
 
 # Create your views here.
@@ -145,7 +145,8 @@ def Air_US_Bangla(request):
 
 @login_required(login_url="/account/login/")
 def bolaka(request):
-    return render(request, 'main/bolaka.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/bolaka.html', {'Balaka': Balaka})
 
 @login_required(login_url="/account/login/")
 def Bus_Akash(request):

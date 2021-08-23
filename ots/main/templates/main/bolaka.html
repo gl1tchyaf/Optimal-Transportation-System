@@ -18,6 +18,21 @@
                     <h2 class="tm-text-blue mb-4">Picture</h2>
 				  <img src="/static/balaka.png">
                     <br>
+
+                    <div style="background-color:white;">
+                        <h1>Reviews: </h1>
+                        {% for Balaka in Balaka %}
+                            <div>
+                                <h2>Reviewer name: {{ Balaka.name }}</h2>
+                                <h2>Review: {{ Balaka.text }}</h2>
+                                <h2>Rating: {{Balaka.rate }}</h2>
+                                <h2>Review date: {{ Balaka.date }}</h2>
+                                <br>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+
 				  <div class="topnav">
                       <div class="centerb">
                             <button type="submit"><a href="{% url 'articles:ticket_page' %}">Buy Ticket</a></button>
