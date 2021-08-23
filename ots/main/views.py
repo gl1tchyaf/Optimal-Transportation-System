@@ -1,6 +1,8 @@
 from django.forms.widgets import Input
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.template import loader
+
 from .models import Article
 from django.contrib.auth.decorators import login_required
 
@@ -10,6 +12,8 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 from django.core.mail import send_mail
+
+from .forms import RateForm
 
 
 # Create your views here.
@@ -120,6 +124,8 @@ def ticket(request):
     buf.seek(0)
 
     return FileResponse(buf, as_attachment=True, filename="ticket.pdf")
+
+
 
 # Air
 @login_required(login_url="/account/login/")
