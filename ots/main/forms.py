@@ -1,11 +1,10 @@
 from django import forms
+from . import models
 from .models import balaka, RATE_CHOICES
 
 
-class RateForm(forms.ModelForm):
-    text = forms.CharField(widget=forms.Textarea(attrs={'class' : 'materialize-textarea'}), required=False)
-    rate = forms.ChoiceField(choices=RATE_CHOICES, widget= forms.Select(), required=True)
-
+class balakareview(forms.ModelForm):
     class Meta:
-        model = balaka
-        fields = ('text', 'rate')
+        model = models.balaka
+        fields = ['name', 'text', 'rate']
+

@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^about/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^bolaka/$', views.bolaka, name="bolaka"),
+    url(r'^bolakareview/$', views.bolakareview, name="bolakareview"),
     url(r'^ticket/$', views.ticket, name="ticket"),
     url(r'^ticket_page/$', views.ticket_page, name="ticket_page"),
 

@@ -1,6 +1,6 @@
 from django.forms.widgets import Input
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import loader
 
 from .models import Article
@@ -14,6 +14,8 @@ from reportlab.lib.pagesizes import letter
 from django.core.mail import send_mail
 
 from .models import balaka
+
+from . import forms
 
 
 # Create your views here.
@@ -126,7 +128,6 @@ def ticket(request):
     return FileResponse(buf, as_attachment=True, filename="ticket.pdf")
 
 
-
 # Air
 @login_required(login_url="/account/login/")
 def Air_Biman_Bangladesh(request):
@@ -137,70 +138,99 @@ def Air_Biman_Bangladesh(request):
 def Air_Novoair(request):
     return render(request, 'main/Air_Novoair.html')
 
+
 @login_required(login_url="/account/login/")
 def Air_US_Bangla(request):
     return render(request, 'main/Air_US_Bangla.html')
 
-# Bus
 
+# Bus
 @login_required(login_url="/account/login/")
 def bolaka(request):
     Balaka = balaka.objects.all().order_by('date')
     return render(request, 'main/bolaka.html', {'Balaka': Balaka})
 
+
+@login_required(login_url="/account/login/")
+def bolakareview(request):
+    if request.method == 'POST':
+        form = forms.balakareview(request.POST, request.FILES)
+        if form.is_valid():
+            # save to db
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            return redirect('articles:bolaka')
+    else:
+        form = forms.balakareview()
+    return render(request, 'main/balakareview.html', {'form': form})
+
+
 @login_required(login_url="/account/login/")
 def Bus_Akash(request):
     return render(request, 'main/Bus_Akash.html')
+
 
 @login_required(login_url="/account/login/")
 def Bus_Alif(request):
     return render(request, 'main/Bus_Alif.html')
 
+
 @login_required(login_url="/account/login/")
 def Bus_Anabil(request):
     return render(request, 'main/Bus_Anabil.html')
+
 
 @login_required(login_url="/account/login/")
 def Bus_BRTC(request):
     return render(request, 'main/Bus_BRTC.html')
 
+
 @login_required(login_url="/account/login/")
 def Bus_Green_Dhaka(request):
     return render(request, 'main/Bus_Green_Dhaka.html')
+
 
 @login_required(login_url="/account/login/")
 def Bus_Raida(request):
     return render(request, 'main/Bus_Raida.html')
 
+
 @login_required(login_url="/account/login/")
 def Bus_Skyline(request):
     return render(request, 'main/Bus_Skyline.html')
+
 
 @login_required(login_url="/account/login/")
 def Bus_Supravat(request):
     return render(request, 'main/Bus_Supravat.html')
 
+
 @login_required(login_url="/account/login/")
 def Bus_VIP(request):
     return render(request, 'main/Bus_VIP.html')
 
-# Train
 
+# Train
 @login_required(login_url="/account/login/")
 def Train_Chitra_Express(request):
     return render(request, 'main/Train_Chitra_Express.html')
+
 
 @login_required(login_url="/account/login/")
 def Train_Ekota_Express(request):
     return render(request, 'main/Train_Ekota_Express.html')
 
+
 @login_required(login_url="/account/login/")
 def Train_Mahanagar_Godhuli(request):
     return render(request, 'main/Train_Mahanagar_Godhuli.html')
 
+
 @login_required(login_url="/account/login/")
 def Train_Suborno_Express(request):
     return render(request, 'main/Train_Suborno_Express.html')
+
 
 @login_required(login_url="/account/login/")
 def Train_Tista_Express(request):
