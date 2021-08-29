@@ -4,6 +4,7 @@
 
 {% block content %}
 <br>
+
     <form action="" method="POST" class="contact100-form validate-form">
 				{% csrf_token %}
 
@@ -82,10 +83,6 @@
  						 <option value="Supravat">Supravat</option>
     				</select> <br> <br>
 
-
-
-
-
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
 						<span>
@@ -100,5 +97,14 @@
 					{% endif %}
 				</div>
 			</form>
+		<br>
+		<h1>External sites: </h1>
+		<br>
+		<div>
+			<button class="contact100-form-btn"><a href="https://www.buytickets.com.bd/">Buy Tickets BD</a></button>
+			<button class="contact100-form-btn"><a href="https://www.shohoz.com/bus-tickets">Shohoz</a></button>
+			<button class="contact100-form-btn"><a href="https://www.esheba.cnsbd.com/#/">Train ticket</a></button>
+			<button class="contact100-form-btn"><a href="https://bdtickets.com/">BD tickets</a></button>
+		</div>
 
 {% endblock %}

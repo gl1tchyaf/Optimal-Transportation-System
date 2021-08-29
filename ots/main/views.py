@@ -58,9 +58,6 @@ def contact(request):
         return render(request, 'main/contact.html')
 
 
-
-
-
 @login_required(login_url="/account/login/")
 def ticket_page(request):
     return render(request, 'main/ticket_page.html')
@@ -86,10 +83,10 @@ def ticket(request):
     textob = c.beginText()
     textob.setTextOrigin(inch, inch)
     textob.setFont("Helvetica", 14)
-    name=ticket_page.message_name
-    mail=ticket_page.message_email
-    phone=ticket_page.message_phone
-    start= ticket_page.message_start
+    name = ticket_page.message_name
+    mail = ticket_page.message_email
+    phone = ticket_page.message_phone
+    start = ticket_page.message_start
     end = ticket_page.message_end
     date = ticket_page.message_date
     bus = ticket_page.message_bus
