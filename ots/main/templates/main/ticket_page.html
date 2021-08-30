@@ -84,11 +84,14 @@
     				</select> <br> <br>
 
 
+			<input type="text" name="seat-count" class="input100" placeholder="Enter how many seat you want">
+		<br> <br>
+		{% if message_name %}
 
     <ul class="showcase">
         <li>
             <div class="seat"></div>
-            <small>N/A</small>
+            <small>Empty</small>
         </li>
         <li>
             <div class="seat occupied"></div>
@@ -174,10 +177,13 @@
 
         </div>
     </div>
-		<input type="hidden" name="message-count" values=""> <p class="text">You have selected <span id="count">0</span> seats
-    </p>
+
+			<p class="text">You have selected <span id="count">0</span> seats </p>
+
 
     <script src="/static/ticket.js"></script>
+		{% endif %}
+
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">

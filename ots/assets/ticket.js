@@ -28,6 +28,17 @@ function updateSelectedCount() {
   total.innerText = selectedSeatsCount * ticketPrice;
 }
 
+
+function checkInput(text) {
+
+  if (text) {
+    $("#count").addClass("show");
+  } else {
+    $("#count").removeClass("show");
+  }
+
+}
+
 // Get data from localstorage and populate UI
 function populateUI() {
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));

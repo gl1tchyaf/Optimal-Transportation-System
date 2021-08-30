@@ -72,7 +72,7 @@ def ticket_page(request):
     ticket_page.message_end = request.POST.get('message-end')
     ticket_page.message_date = request.POST.get('message-date')
     ticket_page.message_bus = request.POST.get('message-bus')
-    ticket_page.count = request.POST.get('message-count')
+    ticket_page.count = request.POST.get('seat-count')
 
     return render(request, 'main/ticket_page.html', {'message_name': ticket_page.message_name})
 
