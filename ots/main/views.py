@@ -162,10 +162,21 @@ def bolakareview(request):
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
+            # instance = balaka.objects.get(id=id)
+            # instance.delete()
             return redirect('articles:bolaka')
     else:
         form = forms.balakareview()
     return render(request, 'main/balakareview.html', {'form': form})
+
+
+def deletebalaka(request):
+    deletebalaka.delete_id = request.POST.get('balaka-delete')
+    id = deletebalaka.delete_id
+    print("id")
+    #instance = balaka.objects.get(id=bolaka)
+    #instance.delete()
+    return redirect('articles:bolaka')
 
 
 @login_required(login_url="/account/login/")
