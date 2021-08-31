@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'accounts',
+
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +66,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -100,6 +105,22 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.linkedin.LinkedinOAuth2',
+
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1749298021940851'
+SOCIAL_AUTH_FACEBOOK_SECRET = '299bb2f5163bf332d2e707e29c4bfb78'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '860lai46b4mepo'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lrR9iQdMQQBG8eJO'
+
+LOGIN_REDIRECT_URL = '/main'
 
 
 # Internationalization
@@ -140,3 +161,4 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = '2018-3-60-088@std.ewubd.edu'
 EMAIL_HOST_PASSWORD = 'wktcjgfgflcspisg'
 EMAIL_USE_TLS = True
+

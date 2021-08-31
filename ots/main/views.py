@@ -149,6 +149,7 @@ def Air_US_Bangla(request):
 # Bus
 @login_required(login_url="/account/login/")
 def bolaka(request):
+
     Balaka = balaka.objects.all().order_by('date')
     return render(request, 'main/bolaka.html', {'Balaka': Balaka})
 
@@ -171,9 +172,6 @@ def bolakareview(request):
 
 
 def deletebalaka(request):
-    deletebalaka.delete_id = request.POST.get('balaka-delete')
-    id = deletebalaka.delete_id
-    print("id")
     #instance = balaka.objects.get(id=bolaka)
     #instance.delete()
     return redirect('articles:bolaka')

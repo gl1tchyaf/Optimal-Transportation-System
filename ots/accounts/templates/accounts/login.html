@@ -113,6 +113,12 @@
 					<p id="messages">{{message}}</p>
 				{% endfor %}
 				<div class="mt-4">
+					<ul>
+						<li><a href="{% url 'social:begin' 'facebook' %}">Sign in with Facebook</a>
+						</li>
+						<li><a href="{% url 'social:begin' 'linkedin-oauth2' %}">Sign in with Linkedin</a>
+						</li>
+					</ul>
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="../signup/" class="ml-2">Sign Up</a>
 					</div>
