@@ -25,13 +25,12 @@
                         <h1>Reviews: </h1>
                         {% for Balaka in Balaka %}
                             <div>
-                                <h2>ID: {{ Balaka.id }}</h2>
                                 <h2>Reviewer name: {{ Balaka.name }}</h2>
                                 <h2>Review: {{ Balaka.text }}</h2>
                                 <h2>Rating: {{Balaka.rate }}</h2>
                                 <h2>Review date: {{ Balaka.date }}</h2>
 
-                                <button type="submit" name="balaka-delete" value="3"><a href="{% url 'articles:deletebalaka' %}">Delete review</a></button>
+                                <button type="submit" ><a href="{% url 'articles:deletebalaka' Balaka.id %}">Delete review</a></button>
                                 <br>
                             </div>
                         {% endfor %}

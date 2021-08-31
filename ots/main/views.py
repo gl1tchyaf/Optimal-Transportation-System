@@ -156,8 +156,9 @@ def bolaka(request):
 
 @login_required(login_url="/account/login/")
 def bolakareview(request):
+    form = forms.balakareview()
     if request.method == 'POST':
-        form = forms.balakareview(request.POST, request.FILES)
+        form = forms.balakareview(request.POST)
         if form.is_valid():
             # save to db
             instance = form.save(commit=False)
@@ -171,9 +172,9 @@ def bolakareview(request):
     return render(request, 'main/balakareview.html', {'form': form})
 
 
-def deletebalaka(request):
-    #instance = balaka.objects.get(id=bolaka)
-    #instance.delete()
+def deletebalaka(request, pk):
+    instance = balaka.objects.get(id=pk)
+    instance.delete()
     return redirect('articles:bolaka')
 
 

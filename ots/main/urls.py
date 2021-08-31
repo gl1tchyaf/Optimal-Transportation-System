@@ -1,4 +1,6 @@
 from django.conf.urls import url
+from django.urls import path
+
 from . import views
 
 app_name = 'articles'
@@ -11,7 +13,7 @@ urlpatterns = [
     url(r'^bolaka/$', views.bolaka, name="bolaka"),
     url(r'^bolakareview/$', views.bolakareview, name="bolakareview"),
     url(r'^ticket/$', views.ticket, name="ticket"),
-    url(r'^deletebalaka/$', views.deletebalaka, name="deletebalaka"),
+    path('deletebalaka/<str:pk>/$', views.deletebalaka, name="deletebalaka"),
     url(r'^ticket_page/$', views.ticket_page, name="ticket_page"),
 
 
