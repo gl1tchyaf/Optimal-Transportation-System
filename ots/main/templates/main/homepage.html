@@ -8,8 +8,20 @@
 <br />
 <br />
 <div class="dropdowndiv" align="center">
-    <h3>Select your desired Location &emsp;&emsp;&emsp;&emsp; Select your desired Destination</h3>
-    <select class="dropdown">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{
+        cursor: pointer;
+        color:#fff;
+            }
+</style>
+
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+		<select class="dropdown" id="search-input">
   <option value="Khilgaon">Khilgaon</option>
   <option value="Gabtoli">Gabtoli</option>
   <option value="Technical">Technical</option>
@@ -34,9 +46,16 @@
   <option value="Demra">Demra</option>
   <option value="Uttara">Uttara</option>
   <option value="Airport">Airport</option>
-    </select>
-    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <select class="dropdown">
+  <option value="Mohakhali">Mohakhali</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+		<select class="dropdown" id="search-input2">
   <option value="Khilgaon">Khilgaon</option>
   <option value="Gabtoli">Gabtoli</option>
   <option value="Technical">Technical</option>
@@ -61,9 +80,144 @@
   <option value="Demra">Demra</option>
   <option value="Uttara">Uttara</option>
   <option value="Airport">Airport</option>
-    </select>
-    <br />
-    <button type="submit">Search</button>
+            <option value="Mohakhali">Mohakhali</option>
+			</select>
+            <Button id="submitt" onclick="marge()"> Submit </Button>
+		</div>
+	</div>
+</div>
+
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th  class="bg-info" data-colname="name" data-order="desc">Name &#9650</th>
+        <th  data-colname="splace" data-order="desc">Start Place &#9650</th>
+        <th  data-colname="eplace" data-order="desc">End Place &#9650</th>
+        <th  data-colname="link" data-order="desc">Go &#9650</th>
+    </tr>
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+
+<script>
+var myArray = [
+    {'name':'Akash', 'splace':'Kadamtali - Keraniganj - Babubazar - Naya Bazar - Golap Shah Mazar - GPO - Paltan - Kakrail - Shantinagar - Malibagh Moor - Mouchak - Malibagh Railgate - Hazipara - Rampura Bazar - Rampura Bridge - Merul - Badda - Shahjadpur - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi', 'eplace':'Kadamtali - Keraniganj - Babubazar - Naya Bazar - Golap Shah Mazar - GPO - Paltan - Kakrail - Shantinagar - Malibagh Moor - Mouchak - Malibagh Railgate - Hazipara - Rampura Bazar - Rampura Bridge - Merul - Badda - Shahjadpur - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi','link':'Bus_Akash'},
+    {'name':'Balaka', 'splace':'Sayedabad - Manik Nagar - TT Para - Kamalapur - Malibagh Moor - Mouchak - Mogbazar - Satrasta - Nabisco - Mohakhali - Chairman Bari - Banani - Kakali - Staff Road - MES - Shewra - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi - Station Road - Mill Gate - Board Bazar - Gazipur Bypass - Gazipur Chourasta', 'eplace':'Sayedabad - Manik Nagar - TT Para - Kamalapur - Malibagh Moor - Mouchak - Mogbazar - Satrasta - Nabisco - Mohakhali - Chairman Bari - Banani - Kakali - Staff Road - MES - Shewra - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi - Station Road - Mill Gate - Board Bazar - Gazipur Bypass - Gazipur Chourasta','link':'bolaka'},
+    {'name':'Alif', 'splace':'Japan Garden City - Ring Road - Adabor - Shyamoli - Shishu Mela - Agargaon - Zia Uddyan - Bijoy Sarani - Old Airport - Jahangir Gate - Mohakhali - Chairman Bari - Sainik Club - kakali - Banani - Staff Road - MES - Shewra - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur', 'eplace':'Japan Garden City - Ring Road - Adabor - Shyamoli - Shishu Mela - Agargaon - Zia Uddyan - Bijoy Sarani - Old Airport - Jahangir Gate - Mohakhali - Chairman Bari - Sainik Club - kakali - Banani - Staff Road - MES - Shewra - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur','link':'Bus_Alif'},
+    {'name':'BRTC', 'splace':'Mohammadpur - Asad Gate - Khamar Bari - Farmgate - Jahangir Gate - Mohakhali - Wireless - Gulshan 1 - Badda Link Road - Uttar Badda - Shahjadpur - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Bishwa Road', 'eplace':'Mohammadpur - Asad Gate - Khamar Bari - Farmgate - Jahangir Gate - Mohakhali - Wireless - Gulshan 1 - Badda Link Road - Uttar Badda - Shahjadpur - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Bishwa Road','link':'Bus_BRTC'},
+    {'name':'Raida', 'splace':'Postagola - Dholairpar - Jatrabari - Janapath Moor - Sayedabad - Mugdapara - Bashabo - Khilgaon - Malibagh Railgate - Rampura Bazar - Rampura Bridge - Merul - Badda - Uttar Badda - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Chourasta - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Diabari', 'eplace':'Postagola - Dholairpar - Jatrabari - Janapath Moor - Sayedabad - Mugdapara - Bashabo - Khilgaon - Malibagh Railgate - Rampura Bazar - Rampura Bridge - Merul - Badda - Uttar Badda - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Chourasta - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Diabari','link':'Bus_Raida'},
+    {'name':'VIP', 'splace':'Azimpur - Nilkhet - New Market - City College - Kalabagan - Banani - Kakali - MES - Shewra - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi - Station Road - Mill Gate - Board Bazar - Gazipur Chourasta', 'eplace':'Azimpur - Nilkhet - New Market - City College - Kalabagan - Banani - Kakali - MES - Shewra - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi - Station Road - Mill Gate - Board Bazar - Gazipur Chourasta','link':'Bus_VIP'},
+]
+
+
+
+
+$('#search-input').on('keyup', function(){
+		var value = $('#search-input').val()
+		//console.log('Value:', value)
+		//var data= searchTable(value, myArray)
+		//buildTable(data)
+		marge()
+})
+
+$('#search-input2').on('keyup', function(){
+		var value = $(this).val()
+		//console.log('Value:', value)
+		//var data= searchTable(value, myArray)
+		//buildTable(data)
+		marge()
+})
+
+$('#submitt').on('keyup', function(){
+		var value = $(this).val()
+		//console.log('Value:', value)
+		//var data= searchTable(value, myArray)
+		//buildTable(data)
+		marge()
+})
+
+function marge(){
+	var value = $('#search-input').val()
+	var value2 = $('#search-input2').val()
+	var value3 = $('#submitt').val()
+	console.log('Value:', value)
+	console.log('Value:', value2)
+	var data= searchTable(value, value2, myArray)
+	buildTable(data)
+
+
+}
+
+buildTable(myArray)
+
+function searchTable(value, value2, data){
+	var filteredData = []
+
+	for(var i=0; i< data.length; i++){
+		value = value.toLowerCase()
+		value2 = value2.toLowerCase()
+		var splace = data[i].splace.toLowerCase()
+		var eplace = data[i].eplace.toLowerCase()
+
+		if(splace.includes(value)&& eplace.includes(value2)){
+			filteredData.push(data[i])
+		}
+	}
+
+	return filteredData
+}
+
+
+ $('th').on('click', function(){
+     var column = $(this).data('colname')
+     var order = $(this).data('order')
+     var text = $(this).html()
+     text = text.substring(0, text.length - 1);
+
+
+
+     if (order == 'desc'){
+        myArray = myArray.sort((a, b) => a[column] > b[column] ? 1 : -1)
+        $(this).data("order","asc");
+        text += '&#9660'
+     }else{
+        myArray = myArray.sort((a, b) => a[column] < b[column] ? 1 : -1)
+        $(this).data("order","desc");
+        text += '&#9650'
+     }
+
+    $(this).html(text)
+    buildTable(myArray)
+    })
+
+
+
+
+
+
+
+function buildTable(data){
+    var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+        var colname = `name-${i}`
+        var colage = `splace-${i}`
+        var colbirth = `eplace-${i}`
+		var link= `link-${i}`
+        var row = `<tr>
+
+                        <td>${data[i].name}</td>
+                        <td>${data[i].splace}</td>
+                        <td>${data[i].eplace}</td>
+                        <td><button class="contact100-form-btn"><a href="${data[i].link}">GO</a></td></button>
+                   </tr>`
+        table.innerHTML += row
+    }
+}
+
+</script>
 
     </div>
 <br>
