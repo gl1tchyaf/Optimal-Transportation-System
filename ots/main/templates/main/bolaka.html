@@ -20,7 +20,6 @@
                     <br>
 
 
-
                     <div style="background-color:white;">
                         <h1>Reviews: </h1>
                         {% for Balaka in Balaka %}
@@ -30,7 +29,9 @@
                                 <h2>Rating: {{Balaka.rate }}</h2>
                                 <h2>Review date: {{ Balaka.date }}</h2>
 
+                                {% ifequal user Balaka.user %}
                                 <button type="submit" ><a href="{% url 'articles:deletebalaka' Balaka.id %}">Delete review</a></button>
+                                {% endifequal %}
                                 <br>
                             </div>
                         {% endfor %}

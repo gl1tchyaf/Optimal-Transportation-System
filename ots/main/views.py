@@ -113,7 +113,7 @@ def ticket(request):
         " ",
         "Bus: "+bus,
         " ",
-        "Your selected seat numbers: "+text,
+        ""+text,
         "",
         "All right reserved by optimal transportation system",
 
