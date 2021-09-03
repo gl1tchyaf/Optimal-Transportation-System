@@ -89,77 +89,73 @@
 
 
 
-    <ul class="showcase">
-        <li>
-            <div class="seat"></div>
-            <small>Empty</small>
-        </li>
-        <li>
-            <div class="seat occupied"></div>
-            <small>Occupied</small>
-        </li>
-        <li>
-            <div class="seat selected"></div>
-            <small>Selected</small>
-        </li>
-    </ul>
+
+
 
     <div class="container">
 
 
         <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div><button class="seat" type="button" onclick="number1()"></button></div>
+            <div><button class="seat" type="button" onclick="number2()"></button></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><button class="seat" type="button" onclick="number3()"></button></div>
+            <div><button class="seat" type="button" onclick="number4()"></button></div>
 
         </div>
 		<div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div><button class="seat" type="button" onclick="number5()"></button></div>
+            <div><button class="seat" type="button" onclick="number6()"></button></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><button class="seat" type="button" onclick="number7()"></button></div>
+            <div><button class="seat" type="button" onclick="number8()"></button></div>
 
         </div>
+		<div class="row">
+            <div><button class="seat" type="button" onclick="number9()"></button></div>
+            <div><button class="seat" type="button" onclick="number10()"></button></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><button class="seat" type="button" onclick="number11()"></button></div>
+            <div><button class="seat" type="button" onclick="number12()"></button></div>
+
+        </div>
+		<div class="row">
+            <div><button class="seat" type="button" onclick="number13()"></button></div>
+            <div><button class="seat" type="button" onclick="number14()"></button></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><button class="seat" type="button" onclick="number15()"></button></div>
+            <div><button class="seat" type="button" onclick="number16()"></button></div>
+
+        </div>
+		<div class="row">
+            <div><button class="seat" type="button" onclick="number17()"></button></div>
+            <div><button class="seat" type="button" onclick="number18()"></button></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><button class="seat" type="button" onclick="number19()"></button></div>
+            <div><button class="seat" type="button" onclick="number20()"></button></div>
+
+        </div>
+		<div class="row">
+            <div><button class="seat" type="button" onclick="number21()"></button></div>
+            <div><button class="seat" type="button" onclick="number22()"></button></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><button class="seat" type="button" onclick="number23()"></button></div>
+            <div><button class="seat" type="button" onclick="number24()"></button></div>
+
+        </div>
+
 
 
     </div>
 
 			<p class="text">You have selected <span id="count">0</span> seats </p>
+			 <span id="display"></span>
 
 
 
     <script src="/static/ticket.js"></script>
 
-
+				<textarea id="test" name="message-text"></textarea>
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
@@ -184,5 +180,245 @@
 			<button class="contact100-form-btn"><a href="https://www.esheba.cnsbd.com/#/">Train ticket</a></button>
 			<button class="contact100-form-btn"><a href="https://bdtickets.com/">BD tickets</a></button>
 		</div>
+
+
+
+  <script>
+  function number1(){
+    var displaySpan = document.getElementById("display");
+    var test = document.getElementById("test");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+      test.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+      test.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "one";
+    test.innerHTML += "one";
+  }
+
+  function number2(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "two";
+  }
+
+  function number3(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "three";
+  }
+
+  function number4(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "four";
+  }
+
+  function number5(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "five";
+  }
+
+  function number6(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "six";
+  }
+
+  function number7(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "seven";
+  }
+
+  function number8(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "eight";
+  }
+
+  function number9(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "nine";
+  }
+
+  function number10(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "ten";
+  }
+
+  function number11(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "eleven";
+  }
+
+  function number12(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "twelve";
+  }
+
+  function number13(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "thirteen";
+  }
+
+  function number14(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "forteen";
+  }
+  function number15(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "fifteen";
+  }
+  function number16(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "sixteen";
+  }
+  function number17(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "seventeen";
+  }
+  function number18(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "eighteen";
+  }
+  function number19(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "nineteen";
+  }
+  function number20(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "twenty";
+  }
+  function number21(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "twentyone";
+  }
+  function number22(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "twentytwo";
+  }
+  function number23(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "twentythree";
+  }
+  function number24(){
+    var displaySpan = document.getElementById("display");
+    if(displaySpan.innerHTML){
+      displaySpan.innerHTML += "-";
+    } else {
+      displaySpan.innerHTML = "You have entered: ";
+    }
+    displaySpan.innerHTML += "twentyfour";
+  }
+
+  </script>
+
 
 {% endblock %}
