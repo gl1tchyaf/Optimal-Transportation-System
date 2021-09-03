@@ -72,7 +72,6 @@ def ticket_page(request):
     ticket_page.message_end = request.POST.get('message-end')
     ticket_page.message_date = request.POST.get('message-date')
     ticket_page.message_bus = request.POST.get('message-bus')
-    ticket_page.count = request.POST.get('seat-count')
     ticket_page.text = request.POST.get('message-text')
 
     return render(request, 'main/ticket_page.html', {'message_name': ticket_page.message_name})
@@ -92,9 +91,8 @@ def ticket(request):
     end = ticket_page.message_end
     date = ticket_page.message_date
     bus = ticket_page.message_bus
-    count = str(ticket_page.count)
     text = ticket_page.text
-    print(text)
+    # print(text)
 
     lines = [
         "Welcome to optimal transportation system",
@@ -115,7 +113,7 @@ def ticket(request):
         " ",
         "Bus: "+bus,
         " ",
-        "Total Seats: "+count,
+        "Your selected seat numbers: "+text,
         "",
         "All right reserved by optimal transportation system",
 
