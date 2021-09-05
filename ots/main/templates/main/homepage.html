@@ -99,8 +99,7 @@
 <table class="table table-striped">
     <tr  class="bg-info">
         <th  class="bg-info" data-colname="name" data-order="desc">Name &#9650</th>
-        <th  data-colname="splace" data-order="desc">Start Place &#9650</th>
-        <th  data-colname="eplace" data-order="desc">End Place &#9650</th>
+
         <th  data-colname="link" data-order="desc">Go &#9650</th>
     </tr>
     <tbody id="myTable">
@@ -217,8 +216,7 @@ function buildTable(data){
         var row = `<tr>
 
                         <td>${data[i].name}</td>
-                        <td>${data[i].splace}</td>
-                        <td>${data[i].eplace}</td>
+
                         <td><button class="contact100-form-btn"><a href="${data[i].link}">GO</a></td></button>
                    </tr>`
         table.innerHTML += row
