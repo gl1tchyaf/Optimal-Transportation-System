@@ -4,6 +4,13 @@ url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 *{
     box-sizing: border-box;
 }
+.ticket-body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/static/ticket-bg.jpg');
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 
@@ -27,6 +34,11 @@ url('https://fonts.googleapis.com/css?family=Lato&display=swap');
     perspective: 1000px;
     margin-bottom: 30px;
 }
+.middle--{
+margin: auto;
+  width: 400px;
+}
+
 
 .seat{
     background-color:#444451;

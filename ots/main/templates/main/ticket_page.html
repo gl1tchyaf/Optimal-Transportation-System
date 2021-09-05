@@ -4,10 +4,10 @@
 
 {% block content %}
 <br>
-
+<body class="ticket-body">
     <form action="" method="POST" class="contact100-form validate-form">
 				{% csrf_token %}
-
+		<div class="container middle--">
 		<h1> Enter your information:  </h1> <br>
 					<input class="input100" type="text" name="message-name" placeholder="Full Name"> <br> <br>
 
@@ -82,7 +82,7 @@
   						<option value="Skyline">Skyline</option>
  						 <option value="Supravat">Supravat</option>
     				</select> <br> <br>
-
+</div>
 
 		<br> <br>
 
@@ -91,7 +91,7 @@
 
 
 
-    <div class="container">
+    <div class="container middle--">
 
 
         <div class="row">
@@ -146,9 +146,10 @@
 
 
     </div>
-
-			<p class="text">You have selected <span id="count">0</span> seats </p>
-			 <span id="display"></span>
+<br>
+			<p class="middle--" >You have selected <span id="count">0</span> seats </p>
+		<span class="middle--" id="display"></span>
+		<br>
 
 
 
@@ -156,7 +157,7 @@
 
 				<textarea style="display:none;" id="test" name="message-text"></textarea>
 
-				<div class="container-contact100-form-btn">
+				<div class="container-contact100-form-btn middle--">
 					<button class="contact100-form-btn">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
@@ -171,15 +172,15 @@
 				</div>
 			</form>
 		<br>
-		<h1>External sites: </h1>
+		<h1 class="middle--">External sites: </h1>
 		<br>
-		<div>
+		<div class="middle--">
 			<button class="contact100-form-btn"><a href="https://www.buytickets.com.bd/">Buy Tickets BD</a></button>
 			<button class="contact100-form-btn"><a href="https://www.shohoz.com/bus-tickets">Shohoz</a></button>
 			<button class="contact100-form-btn"><a href="https://www.esheba.cnsbd.com/#/">Train ticket</a></button>
 			<button class="contact100-form-btn"><a href="https://bdtickets.com/">BD tickets</a></button>
 		</div>
-
+</body>
 
 
   <script>
