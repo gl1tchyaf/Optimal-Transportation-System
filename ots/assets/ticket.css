@@ -4,7 +4,7 @@ url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 *{
     box-sizing: border-box;
 }
-.ticket-body{
+body{
   font-family: Arial, Helvetica, sans-serif;
   background-image: url('/static/ticket-bg.jpg');
  background-position: center;
@@ -37,6 +37,8 @@ url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 .middle--{
 margin: auto;
   width: 400px;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
 }
 
 
