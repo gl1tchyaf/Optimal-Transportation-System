@@ -4,9 +4,7 @@ from django.db import models
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField()
-    body = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, default=None, on_delete=models.DO_NOTHING)
     # add in thumbnail later
     # add in author later
 
@@ -38,6 +36,5 @@ class balaka(models.Model):
     unlikes = models.PositiveIntegerField(default=0)
     user = models.ForeignKey(User, default=None, on_delete=models.DO_NOTHING)
 
-
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
