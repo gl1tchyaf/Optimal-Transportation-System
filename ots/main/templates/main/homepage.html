@@ -15,6 +15,11 @@
 <br />
 <br />
 <br />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="row">
+<div class="main-search col-sm-3">
 <div class="dropdowndiv" align="center">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -29,6 +34,7 @@
 <div class="row">
 	<div class="col">
 		<div class="box">
+            <h3>Start Location</h3>
 		<select class="dropdown" id="search-input">
   <option value="Khilgaon">Khilgaon</option>
   <option value="Gabtoli">Gabtoli</option>
@@ -63,6 +69,7 @@
 <div class="row">
 	<div class="col">
 		<div class="box">
+            <h3>Destination</h3>
 		<select class="dropdown" id="search-input2">
   <option value="Khilgaon">Khilgaon</option>
   <option value="Gabtoli">Gabtoli</option>
@@ -93,7 +100,7 @@
 
 		</div>
         <br>
-        <Button id="submitt" onclick="marge()"> Submit </Button>
+        <Button id="submitt" onclick="marge()" class="button-ticket button2-ticket"> Submit </Button>
         <br>
 	</div>
 </div>
@@ -102,14 +109,14 @@
 <table class="table table-striped">
     <tr  class="bg-info">
         <th  class="bg-info" data-colname="name" data-order="desc">Name &#9650</th>
-        <th  data-colname="link" data-order="desc">Go &#9650</th>
+        <th  data-colname="link" data-order="desc">Bus Page &#9650</th>
     </tr>
     <tbody id="myTable">
 
     </tbody>
 </table>
 
-
+</div>
 <script>
 var myArray = [
     {'name':'Akash', 'splace':'Kadamtali - Keraniganj - Babubazar - Naya Bazar - Golap Shah Mazar - GPO - Paltan - Kakrail - Shantinagar - Malibagh Moor - Mouchak - Malibagh Railgate - Hazipara - Rampura Bazar - Rampura Bridge - Merul - Badda - Shahjadpur - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi', 'eplace':'Kadamtali - Keraniganj - Babubazar - Naya Bazar - Golap Shah Mazar - GPO - Paltan - Kakrail - Shantinagar - Malibagh Moor - Mouchak - Malibagh Railgate - Hazipara - Rampura Bazar - Rampura Bridge - Merul - Badda - Shahjadpur - Bashtola - Notun Bazar - Nadda - Bashundhara - Jamuna Future Park - Kuril Bishwa Road - Khilkhet - Airport - Jashimuddin (Uttara) - Rajlakshmi - Azampur - House Building - Abdullahpur - Tongi','link':'Bus_Akash'},
@@ -218,7 +225,7 @@ function buildTable(data){
         var row = `<tr>
 
                         <td>${data[i].name}</td>
-                        <td><button class="contact100-form-btn"><a href="${data[i].link}">GO</a></td></button>
+                        <td><button class="contact100-form-btn button-ticket button2-ticket"><a href="${data[i].link}">GO</a></td></button>
                    </tr>`
         table.innerHTML += row
     }
@@ -229,7 +236,9 @@ function buildTable(data){
 </script>
 
 
+
     </div>
+    <div class="col-sm-4 transport--">
 <br>
 <br>
 <h1>Transportations</h1>
@@ -263,6 +272,8 @@ function buildTable(data){
     <a href="{% url 'articles:Air_US_Bangla' %}"><h2>US-Bangla Airlines</h2></a>
     <a href="{% url 'articles:Air_Novoair' %}"><h2>Novoair</h2></a>
 </div>
+        </div>
+    </div>
 
 <script>
 var acc = document.getElementsByClassName("accordion");
@@ -282,11 +293,6 @@ for (i = 0; i < acc.length; i++) {
 </script>
 
 <style>
-    .box {
-
-
-}
-
 .box select {
   background-color: #0563af;
   color: white;
@@ -299,13 +305,43 @@ for (i = 0; i < acc.length; i++) {
   appearance: button;
   outline: none;
 }
-
-
-
-
-
 .box select option {
   padding: 30px;
 }
+.main-search{
+position: relative;
+  right: 0px;
+  left: 1200px;
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+}
+.button-ticket {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.button2-ticket:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.transport--{
+position: absolute;
+  left: auto;
+  width: 700px;
+  height: 120px;
+padding: 70px 20px 20px 100px;
+}
+
 </style>
 {% endblock %}
