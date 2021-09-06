@@ -26,14 +26,22 @@ RATE_CHOICES=[
 
 ]
 
+BUS_CHOICES=[
+    ('Balaka', 'Balaka'),
+    ('Akash', 'Akash'),
+    ('Alif', 'Alif'),
+    ('Raida', 'Raida'),
+    ('VIP', 'VIP'),
+    ('BRTC', 'BRTC')
+]
+
 
 class balaka(models.Model):
     name = models.CharField(max_length=20)
     date = models.DateTimeField(auto_now_add=True)
     text = models.TextField(max_length=3000, blank=True)
     rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, null=True)
-    likes = models.PositiveIntegerField(default=0)
-    unlikes = models.PositiveIntegerField(default=0)
+    busname = models.CharField(choices=BUS_CHOICES,max_length=20, default= None, null=True)
     user = models.ForeignKey(User, default=None, on_delete=models.DO_NOTHING)
 
     def __str__(self):

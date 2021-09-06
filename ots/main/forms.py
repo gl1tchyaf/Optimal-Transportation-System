@@ -6,5 +6,5 @@ from .models import balaka, RATE_CHOICES
 class balakareview(forms.ModelForm):
     class Meta:
         model = models.balaka
-        fields = ['name', 'text', 'rate']
+        fields = ['name', 'text', 'rate', 'busname']
 

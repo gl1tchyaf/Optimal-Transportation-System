@@ -23,17 +23,20 @@
                     <div style="background-color:white;">
                         <h1>Reviews: </h1>
                         {% for Balaka in Balaka %}
+                        {% ifequal Balaka.busname 'Balaka' %}
                             <div>
                                 <h2>Reviewer name: {{ Balaka.name }}</h2>
                                 <h2>Review: {{ Balaka.text }}</h2>
                                 <h2>Rating: {{Balaka.rate }}</h2>
                                 <h2>Review date: {{ Balaka.date }}</h2>
+                                <h2>Review Bus: {{ Balaka.busname }}</h2>
 
                                 {% ifequal user Balaka.user %}
                                 <button type="submit" ><a href="{% url 'articles:deletebalaka' Balaka.id %}">Delete review</a></button>
                                 {% endifequal %}
                                 <br>
                             </div>
+                        {% endifequal %}
                         {% endfor %}
 
                     </div>
