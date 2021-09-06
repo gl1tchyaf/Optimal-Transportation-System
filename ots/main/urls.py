@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^about/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^bolaka/$', views.bolaka, name="bolaka"),
+    url(r'^offers_page/$', views.offers, name="offers_page"),
     url(r'^bolakareview/$', views.bolakareview, name="bolakareview"),
     url(r'^ticket/$', views.ticket, name="ticket"),
     path('deletebalaka/<str:pk>/$', views.deletebalaka, name="deletebalaka"),

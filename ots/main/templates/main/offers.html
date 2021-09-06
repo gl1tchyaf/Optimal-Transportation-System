@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+
+ <div>
+                        <h1>Offers: </h1>
+                        {% for article in articles %}
+                            {% ifequal user article.user %}
+                                <h2>{{ article.title }}</h2>
+                            {% endifequal %}
+                        {% endfor %}
+
+                    </div>
+
+{% endblock %}

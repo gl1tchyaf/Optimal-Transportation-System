@@ -21,8 +21,7 @@ from . import forms
 # Create your views here.
 @login_required(login_url="/accounts/login/")
 def homepage(request):
-    articles = Article.objects.all()
-    return render(request, 'main/homepage.html', {'articles': articles})
+    return render(request, 'main/homepage.html')
 
 
 @login_required(login_url="/accounts/login/")
@@ -254,4 +253,11 @@ def Train_Suborno_Express(request):
 @login_required(login_url="/account/login/")
 def Train_Tista_Express(request):
     return render(request, 'main/Train_Tista_Express.html')
+
+
+@login_required(login_url="/account/login/")
+def offers(request):
+    articles = Article.objects.all()
+    return render(request, 'main/offers.html', {'articles': articles})
+
 
