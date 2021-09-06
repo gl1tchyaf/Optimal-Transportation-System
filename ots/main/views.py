@@ -179,7 +179,8 @@ def deletebalaka(request, pk):
 
 @login_required(login_url="/account/login/")
 def Bus_Akash(request):
-    return render(request, 'main/Bus_Akash.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/Bus_Akash.html', {'Balaka': Balaka})
 
 
 @login_required(login_url="/account/login/")
