@@ -1,5 +1,5 @@
 from django.forms.widgets import Input
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template import loader
 
@@ -165,7 +165,8 @@ def bolakareview(request):
             instance.save()
             # instance = balaka.objects.get(id=id)
             # instance.delete()
-            return redirect('articles:bolaka')
+            next = request.POST.get('next', '/')
+            return HttpResponseRedirect(next)
     else:
         form = forms.balakareview()
     return render(request, 'main/balakareview.html', {'form': form})
@@ -179,12 +180,14 @@ def deletebalaka(request, pk):
 
 @login_required(login_url="/account/login/")
 def Bus_Akash(request):
-    return render(request, 'main/Bus_Akash.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/Bus_Akash.html', {'Balaka': Balaka})
 
 
 @login_required(login_url="/account/login/")
 def Bus_Alif(request):
-    return render(request, 'main/Bus_Alif.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/Bus_Alif.html', {'Balaka': Balaka})
 
 
 @login_required(login_url="/account/login/")
@@ -194,7 +197,8 @@ def Bus_Anabil(request):
 
 @login_required(login_url="/account/login/")
 def Bus_BRTC(request):
-    return render(request, 'main/Bus_BRTC.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/Bus_BRTC.html', {'Balaka': Balaka})
 
 
 @login_required(login_url="/account/login/")
@@ -204,7 +208,9 @@ def Bus_Green_Dhaka(request):
 
 @login_required(login_url="/account/login/")
 def Bus_Raida(request):
-    return render(request, 'main/Bus_Raida.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/Bus_Raida.html', {'Balaka': Balaka})
+
 
 
 @login_required(login_url="/account/login/")
@@ -219,7 +225,9 @@ def Bus_Supravat(request):
 
 @login_required(login_url="/account/login/")
 def Bus_VIP(request):
-    return render(request, 'main/Bus_VIP.html')
+    Balaka = balaka.objects.all().order_by('date')
+    return render(request, 'main/Bus_VIP.html', {'Balaka': Balaka})
+
 
 
 # Train
