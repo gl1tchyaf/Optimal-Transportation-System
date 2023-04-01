@@ -1,5 +1,5 @@
 
-from django.conf.urls import url
+#from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from . import views
@@ -9,10 +9,9 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('', include('social_django.urls', namespace='social')),
-    url(r'^accounts/', include('accounts.urls')),
-    url(r'^main/', include('main.urls')),
-    url(r'^$', views.homepage),
-
+    path('accounts/', include('accounts.urls')),
+    path('main/', include('main.urls')),
+    path('', views.homepage),
 
 ]
 
